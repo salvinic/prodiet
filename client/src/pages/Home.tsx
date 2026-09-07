@@ -404,22 +404,84 @@ export default function Home() {
 
         <section id="contatti" className="scroll-mt-16 bg-[#f2f0e8] py-8">
           <div className="container">
-            <div className="relative overflow-hidden rounded-[2rem] bg-[#143329] px-6 py-20 text-center text-[#f2f0e8] sm:px-12 lg:py-28">
+            <div className="relative overflow-hidden rounded-[2rem] bg-[#143329] px-6 py-16 text-[#f2f0e8] sm:px-12 lg:py-20">
               <div className="absolute left-1/2 top-1/2 size-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" aria-hidden="true" />
               <div className="absolute left-1/2 top-1/2 size-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" aria-hidden="true" />
-              <div className="relative">
-                <p className="text-[0.72rem] font-extrabold uppercase tracking-[0.2em] text-[#a9c0b6]">Iniziamo da una conversazione</p>
-                <h2 className="mx-auto mt-7 max-w-4xl font-display text-[clamp(3.4rem,8vw,7.5rem)] font-medium leading-[0.82] tracking-[-0.055em]">
+              <div className="relative grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-end lg:gap-20">
+                <div className="lg:pb-3">
+                  <p className="text-[0.72rem] font-extrabold uppercase tracking-[0.2em] text-[#a9c0b6]">Iniziamo da una conversazione</p>
+                  <h2 className="mt-7 max-w-4xl font-display text-[clamp(3.4rem,7vw,6.6rem)] font-medium leading-[0.82] tracking-[-0.055em]">
                   Portiamo più futuro<br /><em className="text-[#d9ff57]">nella tua impresa.</em>
-                </h2>
-                <a
-                  href="https://www.linkedin.com/in/nicolasalvi"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-12 inline-flex items-center gap-3 rounded-full bg-[#d9ff57] px-7 py-4 text-sm font-extrabold text-[#143329] shadow-[0_14px_35px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-1 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d9ff57] focus-visible:ring-offset-4 focus-visible:ring-offset-[#143329] active:scale-[0.97]"
+                  </h2>
+                  <p className="mt-8 max-w-md text-base leading-relaxed text-[#b9cbc3]">
+                    Raccontaci cosa vuoi costruire. Ti ricontatteremo per capire insieme il prossimo passo.
+                  </p>
+                  <a
+                    href="https://www.linkedin.com/in/nicolasalvi"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-8 inline-flex items-center gap-2 border-b border-[#b9cbc3]/50 pb-1.5 text-xs font-extrabold uppercase tracking-[0.13em] text-[#dfe9e3] transition-colors hover:border-transparent hover:text-[#d9ff57]"
+                  >
+                    Oppure su LinkedIn <ArrowUpRight className="size-3.5" />
+                  </a>
+                </div>
+
+                <form
+                  action="https://api.web3forms.com/submit"
+                  method="POST"
+                  className="rounded-[1.4rem] bg-white/[0.07] p-5 backdrop-blur-sm sm:p-7"
                 >
-                  Confrontiamoci su LinkedIn <ArrowUpRight className="size-4" />
-                </a>
+                  <input type="hidden" name="access_key" value="77d4ec42-8c60-47e5-8f0b-dd64ee8972d6" />
+                  <div className="grid gap-5">
+                    <div>
+                      <label htmlFor="contact-name" className="mb-2 block text-xs font-extrabold uppercase tracking-[0.13em] text-[#b9cbc3]">
+                        Nome
+                      </label>
+                      <input
+                        id="contact-name"
+                        type="text"
+                        name="name"
+                        required
+                        autoComplete="name"
+                        placeholder="Come ti chiami?"
+                        className="w-full rounded-xl border border-white/15 bg-white/[0.07] px-4 py-3.5 text-sm text-white placeholder:text-[#b9cbc3]/65 transition-colors focus:border-[#d9ff57] focus:bg-white/[0.11] focus:outline-none focus:ring-2 focus:ring-[#d9ff57]/40"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="contact-email" className="mb-2 block text-xs font-extrabold uppercase tracking-[0.13em] text-[#b9cbc3]">
+                        Email
+                      </label>
+                      <input
+                        id="contact-email"
+                        type="email"
+                        name="email"
+                        required
+                        autoComplete="email"
+                        placeholder="nome@azienda.it"
+                        className="w-full rounded-xl border border-white/15 bg-white/[0.07] px-4 py-3.5 text-sm text-white placeholder:text-[#b9cbc3]/65 transition-colors focus:border-[#d9ff57] focus:bg-white/[0.11] focus:outline-none focus:ring-2 focus:ring-[#d9ff57]/40"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="contact-message" className="mb-2 block text-xs font-extrabold uppercase tracking-[0.13em] text-[#b9cbc3]">
+                        Messaggio
+                      </label>
+                      <textarea
+                        id="contact-message"
+                        name="message"
+                        required
+                        rows={4}
+                        placeholder="Di cosa vuoi parlare?"
+                        className="w-full resize-y rounded-xl border border-white/15 bg-white/[0.07] px-4 py-3.5 text-sm text-white placeholder:text-[#b9cbc3]/65 transition-colors focus:border-[#d9ff57] focus:bg-white/[0.11] focus:outline-none focus:ring-2 focus:ring-[#d9ff57]/40"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      className="mt-1 inline-flex w-full items-center justify-center gap-3 rounded-full bg-[#d9ff57] px-7 py-4 text-sm font-extrabold text-[#143329] shadow-[0_14px_35px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-1 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d9ff57] focus-visible:ring-offset-4 focus-visible:ring-offset-[#143329] active:scale-[0.97]"
+                    >
+                      Invia il messaggio <ArrowUpRight className="size-4" />
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
